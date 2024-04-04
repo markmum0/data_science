@@ -15,13 +15,20 @@ with open('data.csv') as csv_file:
     for row in csv_reader:
         language_counter.update(row['LanguagesWorkedWith'].split(';'))
 
-print(language_counter.most_common(15))
-#plt.title('Salaries for developers')
-#plt.xlabel('Ages')
-#plt.ylabel('Salaries (USD)')
+languages = []
+popularity = []
+
+for item in language_counter.most_common():
+    languages.append(item[0])
+    popularity.append(item[1])
+
+plt.barh(languages, popularity)
+plt.title('Most Used Languages')
+plt.xlabel('Popularity')
+plt.ylabel('Languages')
 # this shows a grid on the graph
-#plt.grid(True)
+plt.grid(True)
 # its the key
 #plt.legend()
 # this shows the plot
-#plt.show()
+plt.show()
