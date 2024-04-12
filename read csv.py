@@ -7,7 +7,7 @@ import numpy as np
 # the method below implements the seaborn-v0_8-darkgrid style
 plt.style.use('ggplot')
 #opening the data.csv file
-with open('data.csv') as csv_file:
+with open('data.csv', 'r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
 # using the counter function from collections to count the frequency of the languages used.
     language_counter = Counter()
